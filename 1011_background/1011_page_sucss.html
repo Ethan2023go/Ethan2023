@@ -7,6 +7,9 @@
     <style>
       * {
         margin: 0;
+        /* 去除空白 */
+        box-sizing: border-box;
+        /* border不會超出 */
       }
       .nav {
         width: 100%;
@@ -47,24 +50,30 @@
 
       iframe{
         width:80%;
+        border: 10px solid #1C1CFF;
+        border-style:inset;
       }
 
-      
-        
+      .box1{
+        background-image: url();
+      }
+        a{
+        size:20px; 
+        }
       
     </style>
   </head>
 
   <body>
     <div class="nav">
-      <a href="食物照">食物照</a>
-      <a href="美食影片">美食影片</a>
-      <a href="地圖">地圖</a>
+      <a href="#食物照">食物照</a>
+      <a href="#美食影片">美食影片</a>
+      <a href="#地圖">地圖</a>
     </div>
     <br>
     
     <div class="食物照"></div> 
-    <div class="contaier">
+    <div class="container">
     
       <table>
         <tr>
@@ -113,7 +122,18 @@
 
     <div class="cintainer">
     <div class="box3">
+<table>
+    <tr>
+        <td>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10903.53535649182!2d139.7401425701468!3d35.66122902739037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bbd9009ec09%3A0x481a93f0d2a409dd!2z5p2x5Lqs6ZC15aGU!5e0!3m2!1szh-TW!2stw!4v1697006910387!5m2!1szh-TW!2stw" width="600" height="450" ;allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </td>
 
+        <td>
+            The Tokyo megalopolis represents the centre of Japanese culture and is located in the Kanto region on Honshu, Japan’s largest island. It has an area of 6,993 square kilometres, 36.29 per cent of which are green areas and parks. The central part of the city has a population of 8,457,000, while the entire area has a population of 12,544,000 (statistical data from 2005). The city is a mix of traditional and modern art, technology, modern architecture, haute couture, culture and a busy lifestyle. Through travel tips focused on a sustainable way of spending leisure time, we invite you to join us on a trip to the famous Tokyo where cultural diversity depicts the modern life in the megalopolis of neon lights.
+        </td>
+    </tr>
+</table>
     </div>
+    <a href="#" id="top">top</a>
   </body>
 </html>
