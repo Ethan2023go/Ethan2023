@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* <!-- > 空格 ~ 練習 -- >  */
+      .p1,
+      .p2,
+      .p3 {
+        color: red;
+      }
+
+      .div2 > .p21 {
+        color: blue;
+      }
+
+      .box1>p{
+        color:aquamarine;
+      }
+      
+      .box2>p{
+        color:yellow
+      }
+      
+      .box3>p{
+     color:tomato;
+      }
+      .box1 > div > p {
+            color: lawngreen;
+        }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- , -->
+      <h3>,</h3>
+      <h4>多組選擇一起</h4>
+      <p class="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <p class="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <p class="p3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+
+    <br />
+    <hr />
+    <br />
+
+    <h3></h3>
+    <h4>下一層</h4>
+    <div class="div2">
+      div2
+      <p class="p21">Lorem ipsum dolor sit amet.</p>
+      <p class="p21">Lorem ipsum dolor sit amet.</p>
+      <p class="p21">Lorem ipsum dolor sit amet.</p>
+    </div>
+
+    <br />
+    <hr />
+    <br />
+    <div class="container box1">
+      <p>Lorem ipsum dolor sit amet.</p>
+      <div>
+        <p>
+            Lorem ipsum dolor sit amet.
+        </p>
+      </div>
+    </div>
+    <div class="container box2">
+        <p>Lorem ipsum dolor sit amet.</p>
+        <div class="container box3">
+            <p>Lorem ipsum dolor sit amet.</p>
+  </body>
+</html>
