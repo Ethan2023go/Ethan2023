@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table,
+      tr,
+      td,
+      th {
+        border: 1px black solid;
+        border-collapse: collapse;
+        text-align: center;
+      }
+
+      table {
+        width: 90%;
+        height: 30vh;
+      }
+      td,
+      th {
+        font-size: 2vw;
+      }
+      .money::before {
+        content: "$";
+      }
+      .money::after {
+        content: "元";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <table>
+        <tr>
+          <th width="15%">name</th>
+          <th width="20%">bonus</th>
+          <th width="15%">績效成長</th>
+          <th>備註</th>
+        </tr>
+        <tr>
+          <td>Amy</td>
+          <td class="money">5000</td>
+          <td>10%</td>
+        </tr>
+        <tr>
+          <td>Bob</td>
+          <td class="money">6000</td>
+          <td>20%</td>
+        </tr>
+        <tr>
+          <td>Terry</td>
+          <td class="money">7000</td>
+          <td>30%</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
