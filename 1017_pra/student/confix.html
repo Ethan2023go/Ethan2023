@@ -1,0 +1,59 @@
+<style>
+    table,
+    tr,
+    td {
+      border: 1px black solid;
+      border-collapse: collapse;
+      text-align: center;
+      font-size: 25px;
+      background-color: aquamarine;
+    }
+    table {
+      width: 40%;
+      margin: -4% 50% 0% 30%;
+      height: 10vh;
+      /* background-color: blue; */
+    }
+    h4 {
+      text-align: center;
+      font-size: 50px;
+      background-color: antiquewhite;
+    }
+    .A-5 {
+      width: 190px;
+      /* background-color: bisque; */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h4>修改</h4>
+    <form action="" enctype="multipart/form-data">
+      <table>
+        <tr>
+          <td>
+            <label for="">name</label>
+            <input type="text" name="name" id="name" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="name">mobile</label>
+            <input type="text" name="mobile" id="mobile" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="file" name="file" id="file" class="A-5" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="submit" name="submit" id="submit" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</body>
+</html>

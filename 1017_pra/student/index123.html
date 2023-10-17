@@ -39,17 +39,34 @@
         background-color: aquamarine;
         color: blue;
       }
-      .A-2 > a {
+      .A-2 > div > a {
         text-decoration: none;
-        /* background-color: azure; */
+        /* background-color: red; */
+        /* text-align: right; */
+        /* margin: auto; */
+        /* width: 100vw; */
+        /* height: 200vh; */
+      }
+      .A-2 {
         text-align: right;
+        /* width: 10vw; */
+        font-size: 30px;
+        /* background-color: chocolate; */
+        /* text-decoration: none; */
+      }
+      .ZA-1 {
+        width: 90%;
+        height: 35px;
+        /* background-color: chartreuse; */
       }
     </style>
   </head>
   <body>
     <div class="container A-2">
       <h3>student list</h3>
-      <a href="./create.html">Add&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      <div class="ZA-1">
+        <a href="./create.html">Add&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      </div>
       <table>
         <!-- <th class="A-2"> -->
         <tr>
@@ -57,10 +74,11 @@
           <td>name</td>
           <td>mobile</td>
           <td>pic</td>
+          <td>刪除</td>
         </tr>
         <tr class="A-1">
           <td>1</td>
-          <td><a href="./edit.html">amy</a></td>
+          <td><a href="./edit.html?id=1">amy</a></td>
           <td>0911-111-111</td>
           <td>
             <img
@@ -69,10 +87,15 @@
               srcset=""
             /><br />Amy
           </td>
+          <td>
+            <a href="./confix.html">修改</a><br />
+            <a href="./del.html">刪除</a>
+          </td>
         </tr>
+
         <tr>
           <td>2</td>
-          <td><a href="./edit.html">bob</a></td>
+          <td><a href="./edit.html?id=2">bob</a></td>
           <td>0922-222-222</td>
           <td>
             <img
@@ -81,12 +104,26 @@
               srcset=""
             /><br />Bob
           </td>
+          <td>
+            <a href="./confix.html">修改</a><br />
+            <a href="./del.html">刪除</a>
+          </td>
         </tr>
         <tr class="A-1">
           <td>3</td>
-          <td><a href="./edit.html">cat</a></td>
+          <td><a href="./edit.html?id=3">cat</a></td>
           <td>0933-333-333</td>
-          <td>cat.jpg</td>
+          <td>
+            <img
+              src="https://picsum.photos/id/40/100/100"
+              alt=""
+              srcset=""
+            /><br />Cat
+          </td>
+          <td>
+            <a href="./confix.html">修改</a><br />
+            <a href="./del.html">刪除</a>
+          </td>
         </tr>
         <tr>
           <td>2</td>
