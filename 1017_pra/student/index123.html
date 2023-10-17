@@ -35,11 +35,20 @@
       tr:first-child {
         background-color: blanchedalmond;
       }
+      tr:nth-of-type(3) {
+        background-color: aquamarine;
+        color: blue;
+      }
+      .A-2 > a {
+        text-decoration: none;
+        /* background-color: azure; */
+      }
     </style>
   </head>
   <body>
-    <div class="container">
+    <div class="container A-2">
       <h3>student list</h3>
+      <a href="./create.html">Add&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
       <table>
         <!-- <th class="A-2"> -->
         <tr>
@@ -52,13 +61,25 @@
           <td>1</td>
           <td>amy</td>
           <td>0911-111-111</td>
-          <td>amy.jpg</td>
+          <td>
+            <img
+              src="https://picsum.photos/id/20/100/100"
+              alt=""
+              srcset=""
+            /><br />Amy
+          </td>
         </tr>
         <tr>
           <td>2</td>
           <td>bob</td>
           <td>0922-222-222</td>
-          <td>bob.jpg</td>
+          <td>
+            <img
+              src="https://picsum.photos/seed/picsum/100/100 "
+              alt=""
+              srcset=""
+            /><br />Bob
+          </td>
         </tr>
         <tr class="A-1">
           <td>3</td>
