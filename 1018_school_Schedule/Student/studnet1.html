@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      body {
+        background-color: #ececff;
+      }
       table,
       tr,
       td {
@@ -30,6 +33,31 @@
       h3 {
         text-align: center;
         font-size: 40px;
+        background-color: aquamarine;
+        width: 15%;
+        margin: auto;
+        border-radius: 10px;
+        border: 1px;
+      }
+      tr:first-child {
+        background-color: blanchedalmond;
+      }
+      .B-1 {
+        background-color: #d0d0d0;
+      }
+      .B-2 {
+        background-color: #00caca;
+      }
+      .A-1,
+      .A-2 {
+        background-color: #ff8040;
+      }
+
+      .A-1 > a {
+        text-decoration: none;
+      }
+      .A-2 > a {
+        text-decoration: none;
       }
     </style>
   </head>
@@ -46,8 +74,8 @@
       <div class="nav">
         <table>
           <tr>
-            <td class="A-1"><a href="./teacher.html">老師</a></td>
-            <td class="A-2"><a href="./Home_page.html">首頁</a></td>
+            <td class="A-1"><a href="../Teacher/teacher.html">老師</a></td>
+            <td class="A-2"><a href="../Home_page.html">首頁</a></td>
           </tr>
         </table>
       </div>
@@ -61,7 +89,7 @@
           <td>mail</td>
           <td>DEL</td>
         </tr>
-        <tr>
+        <tr class="B-1">
           <td>1</td>
           <td>amy</td>
           <td>0911-111-111</td>
@@ -71,7 +99,7 @@
             <a href="./confix_S.html">修改</a>
           </td>
         </tr>
-        <tr>
+        <tr class="B-2">
           <td>2</td>
           <td>bob</td>
           <td>0922-222-222</td>
@@ -81,7 +109,7 @@
             <a href="./confix_S.html">修改</a>
           </td>
         </tr>
-        <tr>
+        <tr class="B-1">
           <td>3</td>
           <td>cat</td>
           <td>0933-333-333</td>
