@@ -7,7 +7,11 @@
     <style>
       .container {
         display: flex;
-        flex-wrap: wrap-reverse;
+        /* display: flex是flex的宣告 */
+        justify-content: center;
+        align-items: center;
+        /* justify-content: space-evenly很頂 水平置中 row center (重要)*/
+        /* align-items: center 上下也置中 caloum center(重要)*/
         /* wrap-reverse 排版一樣從左開始排 上下對調 */
         /* nowrap 有inline屬性 想要排版用wrap */
         /* direction-column 直立 or row 橫排 */
@@ -35,6 +39,9 @@
       <div class="items">item7</div>
       <div class="items">item8</div>
       <div class="items">item9</div>
+      <div class="items">item10</div>
+      <div class="items">item11</div>
+      <div class="items">item12</div>
     </div>
   </body>
 </html>
