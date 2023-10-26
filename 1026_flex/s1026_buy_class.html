@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .nav {
+        width: 100%;
+        height: 15vh;
+        background-color: lightcoral;
+        margin-bottom: 40px;
+      }
+      table,
+      tr,
+      td {
+        margin: auto;
+      }
+      .a-1 {
+        background-color: bisque;
+        width: 50px;
+        height: 20px;
+        text-align: center;
+      }
+      .a-2 {
+        background-color: lightsalmon;
+        width: 50px;
+        height: 20px;
+        text-align: center;
+      }
+      .r-1 {
+        display: flex;
+        height: 70vh;
+        width: 80%;
+        background-color: lightgrey;
+        margin: auto;
+        margin-bottom: 40px;
+      }
+      .item-r {
+        width: 400px;
+        height: 300px;
+        /* border: 2px red solid; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 50px;
+        
+      }
+      .g-1 {
+        display: flex;
+        height: 70vh;
+        width: 80%;
+        background-color:lightsalmon;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        /* flex-wrap: wrap要設在外層 */
+    }
+    .item-g {
+        width: 400px;
+        height: 250px;
+        border: 2px greenyellow solid;
+        display: flex;
+        margin: 6px;
+        background-color: aliceblue;
+    }
+    .p-1{
+        margin-top: 200px;
+        width: 350px;
+        height: 300px;
+    }
+    .p-2{
+        margin-top: 200px;
+        width: 350px;
+        height: 300px;
+    }
+    .p-3{
+        margin-top: 200px;
+        width: 350px;
+        height: 300px;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <table>
+        <tr>
+          <td class="a-1"><a href=""></a>1</td>
+          <td class="a-1"><a href=""></a>2</td>
+          <td class="a-1"><a href=""></a>3</td>
+        </tr>
+        <tr>
+          <td class="a-2"><a href=""></a>4</td>
+          <td class="a-2"><a href=""></a>5</td>
+          <td class="a-2"><a href=""></a>6</td>
+        </tr>
+      </table>
+    </div>
+    <div class="container r-1">
+      <div class="item-r"><img src="../img/doog.jpg" alt="" srcset=""class="p-1"></div>
+      <div class="item-r"><img src="../img/cat.jpg" alt="" srcset=""class="p-2"></div>
+      <div class="item-r"><img src="../img/xxdd.jpg" alt="" srcset=""class="p-3"></div>
+    </div>
+</div>
+<div class="container g-1 ">
+  <div class="item-g">g1</div>
+  <div class="item-g">g2</div>
+  <div class="item-g">g3</div>
+  <div class="item-g">g4</div>
+  <div class="item-g">g5</div>
+  <div class="item-g">g6</div>
+</div>
+  </body>
+</html>
