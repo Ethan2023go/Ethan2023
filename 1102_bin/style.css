@@ -4,14 +4,15 @@
   overflow: hidden;
 }
 .container {
-  width: 1024px;
+  width: 1000px;
   height: 768px;
   display: flex;
-  flex-wrap: wrap;
-  /* background-color: lightseagreen; */
+  /* flex-wrap: wrap; */
+  background-color: lightseagreen;
+  justify-content: space-between;
 }
 .header {
-  width: 1024px;
+  width: 1000px;
   height: 65px;
   background-color: lightblue;
   border: 1px solid black;
@@ -37,7 +38,9 @@
   background-color: lightpink;
 }
 .main {
-  width: calc(1024px-255);
+  width: 770px;
+  height: calc(768px -65px -20px);
+  background-color: lightskyblue;
 }
 .main-header {
   width: 770px;
@@ -55,11 +58,11 @@
   background-color: lemonchiffon;
 }
 .footer {
-  width: 1024px;
+  width: 1000px;
   height: 20px;
   background-color: lightgreen;
 }
 .a-1 {
-  width: 1024px;
+  width: 1000px;
   height: 65px;
 }
