@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+   <style>
+    body{
+        background-color: lightgray;
+    }
+    .container{
+        /* background-color: lightcoral; */
+    }
+    .all{
+        background-color: lightblue;
+        margin-top: 200px;
+        border-radius: 20px;     
+    }
+   </style>
+
+</head>
+
+<body>
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
+          <h5 class="text-white h4">Collapsed content</h5>
+          <span class="text-muted">Toggleable via the navbar brand.</span>
+        </div>
+      </div>
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+    <div class="container mt-5">
+    <div class="all d-flex justify-content-center">
+    <form action="/action_page.php">
+        <div class="mb-3 mt-3 ">
+            <div class="row">
+                <div class="col-12 col-sm-12">
+          <label for="file" class="form-label">file</label>
+          <input type="file" class="form-control" id="file" placeholder="Enter file" name="file">
+        </div>
+      </div>
+    </div>
+        
+         <div class="mb-3 mt-3">     
+             <div class="row">
+                 <div class="col-12 col-sm-12">
+           <label for="file" class="form-label">Photo Description</label>
+           <input type="text" class="form-control" id="photoDesc" placeholder="Enter Photo Description" name="photoDesc">
+         </div>
+       </div>
+     </div>
+         
+     <div class="mb-3 mt-3">     
+        <div class="row">
+           <div class="col-12 col-sm-6">
+           <label for="price" class="form-label">price</label>
+           <input type="number" class="form-control" id="price" placeholder="Enter price" name="price">
+           </div>
+         
+           <div class="col-12 col-sm-6">
+           <label for="Unit" class="form-label">Unit</label>
+           <input type="text" class="form-control" id="Unit" placeholder="Enter Unit" name="Unit">
+         </div>
+       </div>
+     </div>
+     
+     <div class="row mt-4">
+        <div class="col-12">
+            <div class="mb-3">
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                  </div>
+            </div>
+        </div>
+    </div>
+</form>
+      </form>
+</div>
+</body>
+</html>
