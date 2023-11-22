@@ -6,8 +6,112 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style1.css">  
 </head>
+
 <body>
+    <!-- nav -->
+    <div class="nav-fluid">
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                  </div>
+                </div>
+              </div>
+          </nav>
+    </div>
+    <!-- carousel -->
+  <div class="carousel">
+    <div class="pic">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                 <img class="img-1carou" src="../img/green_boy.gif" class="d-block  " alt="...">
+              </div>
+              <div class="carousel-item">
+                 <img class="img-1carou" src="../img/blue_boy.gif" class="d-block  " alt="...">
+              </div>
+              <div class="carousel-item">
+                 <img class="img-1carou" src="../img/aquarium.gif" class="d-block  " alt="...">
+              </div>
+        </div>
+
+        <button class="carousel-control-prev bg-info " type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        
+        <button class="carousel-control-next bg-info" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
+        </div>
+
+        <!-- card -->
+  <div class="card">
+    <div class="card-1 ">
+        <div class="card-inside1  text-white">
+            <img class="img-2card" src="../img/internet_bar.gif" class="card-img" alt="...">
+            <div class="card-img-overlay">
+              <h5 class="card-title">CyberCafe</h5>
+              <p class="card-text">Last updated 3 mins ago</p>
+            </div>
+        </div>
+    </div>
+    <div class="card-1 ">
+        <div class="card-inside1 text-white">
+            <img class="img-2card" src="../img/tree.gif" class="card-img" alt="...">
+            <div class="card-img-overlay">
+              <h5 class="card-title2">Treeeeeeee</h5>
+              <p class="card-text2">Last updated 3 mins ago</p>
+            </div>
+        </div>
+    </div>
+    <div class="card-1 ">
+        <div class="card-inside1 text-white">
+            <img class="img-2card" src="../img/sakura.gif" class="card-img" alt="...">
+            <div class="card-img-overlay">
+              <h5 class="card-title3">sakura</h5>
+              <p class="card-text3">Last updated 3 mins ago</p>
+            </div>
+        </div>
+    </div>
+  </div>
+
+      <!-- collapse -->
+      <div class="collapse-a11">
+      <p class="d-inline-flex gap-1">
+       <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+         Link with href
+       </a>
+       <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+         Button with data-bs-target
+       </button>
+      </p>
+      <div class="collapse" id="collapseExample">
+       <div class="coll-img">
+        <img src="../img/nice_car.jpg" alt="" srcset="">
+       </div>
+      </div>
+      <div class="collapse" id="collapseExample2">
+       <div class="coll-img card-body">
+        <img src="../img/YA.jpg" alt="" srcset="">
+       </div>
+    </div>
+</div>
     
+    <!-- dropdown -->
+    <div class="dropdown">
+
+    </div>
 </body>
 </html>
