@@ -23,11 +23,12 @@
   $(fun)
 
 
-  <div class="container mt-3">
-  <div class="text-end">
-  <a href="#" class="btn btn-info"><i class="fa-duotone fa-plus"></i></a>
-   </div>
-  <table class="table table-hover text-center align-middle">
+  <div class="container mt-3 text-end">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      ADD
+    </button>
+  
+   <table class="table table-hover text-center align-middle">
     <!-- align-middle 很好用 記得 -->
     <thead>
       <tr>
@@ -105,5 +106,69 @@
   </table>
 </div>
 
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="all d-flex justify-content-center">
+          <form action="/action_page.php">
+              <div class="mb-3 mt-3 ">
+                  <div class="row">
+                      <div class="col-12 col-sm-12">
+                <label for="file" class="form-label">file</label>
+                <input type="file" class="form-control" id="file" placeholder="Enter file" name="file">
+              </div>
+            </div>
+          </div>
+              
+               <div class="mb-3 mt-3">     
+                   <div class="row">
+                       <div class="col-12 col-sm-12">
+                 <label for="file" class="form-label">Photo Description</label>
+                 <input type="text" class="form-control" id="photoDesc" placeholder="Enter Photo Description" name="photoDesc">
+               </div>
+             </div>
+           </div>
+               
+           <div class="mb-3 mt-3">     
+              <div class="row">
+                 <div class="col-12 col-sm-6">
+                 <label for="price" class="form-label">price</label>
+                 <input type="number" class="form-control" id="price" placeholder="Enter price" name="price">
+                 </div>
+               
+                 <div class="col-12 col-sm-6">
+                 <label for="Unit" class="form-label">Unit</label>
+                 <input type="text" class="form-control" id="Unit" placeholder="Enter Unit" name="Unit">
+               </div>
+             </div>
+           </div>
+           
+           <div class="row mt-4">
+              <div class="col-12">
+                  <div class="mb-3">
+                      <div class="d-grid gap-2">
+                          <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                        </div>
+                  </div>
+              </div>
+          </div>
+      </form>
+            
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
