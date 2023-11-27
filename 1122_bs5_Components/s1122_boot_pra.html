@@ -22,13 +22,26 @@
                   <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                     <a class="nav-link" href="#">Features</a>
-                    <a class="nav-link" href="#">Pricing</a>
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <a class="nav-link" href="#">Setting</a>
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Log out</a>
                   </div>
                 </div>
               </div>
           </nav>
     </div>
+
+    <!-- offcanvas -->
+    <div class="mur">
+    <a class="btn btn-outline-dark mt-2 " data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+      this man's murmur ....
+    </a>
+     
+    <!-- Modal -->
+    <button type="button" class="btn btn-outline-dark mt-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+     Say something to me OK?
+    </button>
+   </div>
+     
     <!-- carousel -->
   <div class="carousel">
     <div class="pic">
@@ -140,5 +153,50 @@
         </ul>
       </div>
     </div>
+
+    <!-- offcanvas2 -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Emo so bad bro</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          Great execution is at least 10 times more important than a good idea, and 100 times more difficult to achieve.
+        </div>
+        <div class="dropdown mt-3">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            drop_drop_drop
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="#">I love PHP</a></li>
+            <li><a class="dropdown-item" href="#">Technical so....</a></li>
+            <li><a class="dropdown-item" href="#">Contact me plz</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+ <!-- Modal -->
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">私を褒めてください。</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <br><br><br><br><br><br><br><br><br><br>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-info">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+ 
 </body>
 </html>
