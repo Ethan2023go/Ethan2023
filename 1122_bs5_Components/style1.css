@@ -107,7 +107,7 @@ body{
 .mur{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .modal{
     box-shadow: 0px 10px 15px rgba(69, 69, 70, 0.3);
