@@ -1,6 +1,6 @@
 *{
     font-family: "標楷體";
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 .box_all{
     width:1000px;
@@ -13,7 +13,7 @@
       width: 1000px;
       height: 65px;
       /* background-color: lightcoral; */
-      background-image: url(./17300-104301/logo123.jpg);
+      background-image: url(./bin_1_imgs/logo123.jpg);
       border: 1px #9D9D9D ridge;
   }
   .middle{
@@ -61,7 +61,7 @@
     width: 768px;
     height:650px;
     /* background-color: lemonchiffon; */
-    background-image: url(./17300-104301/0101.jpg);
+    background-image: url(./bin_1_imgs/0101.jpg);
     display: flex;
     /* justify-content: center; */
     flex-direction: column;
@@ -83,21 +83,21 @@
     height: 35px;
     font-size: 16px;
     color:black;
-    background-image: url(./17300-104301/menu1.png);
+    background-image: url(./bin_1_imgs/menu1.png);
     margin: auto;
     margin-bottom: 3px;
   }
   .a-2{
     font-size: 16px;
     color:black;
-    background-image: url(./17300-104301/menu1.png);
+    background-image: url(./bin_1_imgs/menu1.png);
     width: 200px;
     height: 35px;
     margin: auto;
     margin-bottom: 3px;
   }
   .a-1:hover , .a-2:hover{
-    background-image: url(./17300-104301/menu2.png);
+    background-image: url(./bin_1_imgs/menu2.png);
   }
   .man{
     width: 250px;
