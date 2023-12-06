@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+    .box{
+        height: 300px;
+        width: 300px;
+    }
+</style>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="box bg-danger w-100" id="mybox">
+
+                </div>
+            </div>
+            <div class="col">
+                    <button type="button" class="btn btn-success" id="btnSuccess">Success</button>
+                    <button type="button" class="btn btn-danger"  id="btnDanger">Danger</button>
+                    <button type="button" class="btn btn-warning" id="btnWarning">Warning</button>
+                    <button type="button" class="btn btn-info"    id="btnInfo">Info</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+  <!-- body 上面放JS -->
+   <script>
+    // 綁定
+    // window=瀏覽器 document=網頁 getXX=抓ID
+    // window.document=document 皆可使用 用document簡寫即可
+    let btnSuccess=window.document.getElementById('btnSuccess');
+    let btnDanger=document.getElementById('btnDanger');
+    let btnWarning=document.getElementById('btnWarning');
+    let btnInfo=document.getElementById('btnInfo');
+    let myBox=document.getElementById('mybox');
+    
+
+    // 動作
+    
+    btnSuccess.addEventListener('click',function(){
+    console.log('btnSuccess ok');
+    myBox.setAttribute('class',"box bg-success w-100");
+   });
+    btnDanger.addEventListener('click',function(){
+    console.log('btnDanger ok');
+    myBox.setAttribute('class',"box bg-danger w-100");
+   });
+    btnWarning.addEventListener('click',function(){
+    console.log('btnWarning ok');
+    myBox.setAttribute('class',"box bg-warning w-100");
+   });
+    btnInfo.addEventListener('click',function(){
+    console.log('btnInfo ok');
+    myBox.setAttribute('class',"box bg-info w-100");
+   });
+    
+    </script>
+</body>
+</html>
