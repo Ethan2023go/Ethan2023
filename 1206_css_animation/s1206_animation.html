@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 650px;
+            animation-name: pic;
+            animation-duration: 10s; 
+            animation: pic 10s infinite; /* 播放時間 10 秒，無限循環 */   
+        }
+        @keyframes pic {
+            0%{
+                background-image: url(../img/bg_go.gif);
+                background-size: cover;
+            }
+            25%{
+                background-image: url(../img/kabi.jpg);
+                background-size: cover;
+            }
+            50%{
+                background-image: url(../img/cry_boy.jpg);
+                background-size: cover;
+            }
+            75%{
+                background-image: url(../img/music-girl.jpg);
+                background-size: cover;
+            }
+            100%{
+                background-image: url(../img/morden_place_boy.jpg);
+                background-size: cover;
+            }
+        }
+        /* 圖片如果想貼合box,建議將圖用PS裁減過 */
+     
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+</body>
+</html>
