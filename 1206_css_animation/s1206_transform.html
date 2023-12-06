@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 400px;
+            transition: 1s;
+            transform: rotate(20deg);
+            margin-top: 200px;
+        }
+        .box:hover{
+            transform: rotate(-20deg);
+        }
+        .box1{
+            background-color: lightblue;
+        }
+        .box2{
+            background-color: lightcoral;
+        }
+        img{     
+            width: 300px;
+            height: 400px;
+
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+     
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="box box1">
+     <img src="../img/country_walk.jpg" alt="" srcset="">
+    </div>
+   <div class="box box2">
+    <img src="../img/bad_place_girl.jpg" alt="" srcset="">
+   </div>
+</div>
+</body>
+</html>
