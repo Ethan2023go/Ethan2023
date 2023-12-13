@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    #movingObject {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      width: 50px;
+      height: 50px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+
+<div id="movingObject"></div>
+
+<script>
+//   // 在這裡編寫你的 JavaScript 代碼
+//    movingObject = document.getElementById("movingObject");
+
+//   function moveObject() {
+//     // 移動物件的位置
+//     currentLeft = parseInt(movingObject.style.left) || 0;
+//     movingObject.style.left = (currentLeft + 5) + "px";
+
+//     // 設定下一次移動
+//     requestAnimationFrame(moveObject);
+    
+//   }
+
+//   // 啟動移動
+//   moveObject();
+
+
+
+let movingObject = document.getElementById("yourObject"); // 替換成你的物件ID
+let currentLeft = parseInt(movingObject.style.left) || 0;
+let targetLeft = currentLeft + 100; // 停止的目標位置
+let increment = 5; // 每次移動的距離
+
+let intervalId = setInterval(() => {
+    currentLeft += increment;
+    movingObject.style.left = currentLeft + "px";
+
+    // 如果達到目標位置，清除間隔
+    if (currentLeft >= targetLeft) {
+        clearInterval(intervalId);
+    }
+}, 10); // 每10毫秒移動一次
+
+</script>
+
+</body>
+</html>

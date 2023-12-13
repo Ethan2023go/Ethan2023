@@ -13,22 +13,74 @@
   <style>
     .box {
       display: flex;
-      width: 600px;
-      height: 300px;
+      width: 400px;
+      height: 150px;
       justify-content: space-around;
       align-items: center;
       border: 1px solid black;
+      background-color:#4F4F4F;
+      border-radius: 10px;
     }
 
     .item {
-      width: 150px;
-      height: 150px;
+      width: 100px;
+      height: 100px;
+      /* background-color: lightgreen; */
     }
 
     img{
-      width: 300px;
-      height: 500px;
+      width: 200px;
+      height: 300px;
     }
+    .container{
+      position: relative;
+      height: 90vh;
+      background-image: url(../img/carcar.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    #myImg{
+      position: absolute;
+      bottom:0;
+      border-radius: 10px;
+    }
+
+    .myImgAmimation{
+      position: absolute;
+      animation-name: pic;
+      animation-duration: 18s;
+    }
+
+    .myImgAmimationInit{
+     position: absolute;
+     /* right: 600px; */
+     bottom: 0;
+    }
+
+    @keyframes pic{
+      0%{
+        left: 0%;
+        bottom: 0;
+       }
+      
+      25%{
+        left: 20%;
+        bottom:0x;
+      }
+      75%{
+        left: 40%;
+        bottom: 0px;
+      } 
+      100%{
+        left: 110%;
+        bottom: 0px;
+      }
+    }
+
+    
+    
+
   </style>
 </head>
 
@@ -36,7 +88,7 @@
   <div class="container mt-5">
     <div class="row">
       <div class="col">
-        <div class="box rounded-pill">
+        <div class="box mt-2">
           <div id="light1" class="item bg-danger rounded-circle">
           </div>
           <div id="light2" class="item bg-danger rounded-circle">
@@ -46,13 +98,13 @@
         </div>
       </div>
       <div class="col">
-        <button type="button" id="myBtn" class="btn btn-primary btn-lg mt-5">行人過馬路按鈕</button>
+        <button type="button" id="myBtn" class=" btn-lg mt-5">阿伯的生命在你手上</button>
 
       </div>
     </div>
     <div class="row mt-5">
       <div class="col">
-        <img src="../img/country_walk.jpg" alt="紅綠燈" title="紅綠燈看路"  id="myImg">
+        <img src="../img/old_man.gif" alt="OMG" title="紅綠燈看路"  id="myImg" >
       </div>
     </div>
   </div>
@@ -61,8 +113,8 @@
   <script>
     // initFunction 老師建議養成好習慣，而且之後物件多可以省功
     function initFun() {
-    myImg.setAttribute('class', 'd-none');
-    myBtn.setAttribute('class', 'btn btn-primary btn-lg mt-5 d-block');
+    // myImg.setAttribute('class', '')
+    myBtn.setAttribute('class', 'btn-lg mt-3 position-absolute top-0 end-0 btn btn-danger ');
     }
 
     // 宣告
@@ -88,19 +140,27 @@
       // light1.setAttribute('class',"item bg-success rounded-circle");
       // light2.setAttribute('class',"item bg-success rounded-circle");
       // light3.setAttribute('class',"item bg-success rounded-circle");
-    
+      myImg.setAttribute('class', 'myImgAmimationInit  myImgAmimation')
 
       // green start (分秒數)
       setTimeout(function () {
-        light1.setAttribute('class',"item bg-success rounded-circle");
-      },2500);
+        light1.setAttribute('class',"item bg-warning rounded-circle");
+      },5000);
       setTimeout(function () {
-        light2.setAttribute('class',"item bg-success rounded-circle");
-      },3000);   
+        light2.setAttribute('class',"item bg-warning rounded-circle");
+      },7500);   
       setTimeout(function () {
         light3.setAttribute('class',"item bg-success rounded-circle");
-        myImg.setAttribute('class', 'd-block');
-      },3500);   
+        // myImg.setAttribute('class', 'd-block');
+      },14500);   
+      setTimeout(function () {
+        light2.setAttribute('class',"item bg-success rounded-circle");
+        // myImg.setAttribute('class', 'd-block');
+      },14500);   
+      setTimeout(function () {
+        light1.setAttribute('class',"item bg-success rounded-circle");
+        // myImg.setAttribute('class', 'd-block');
+      },14500);   
 
       // red again
       setTimeout(function () {
@@ -109,14 +169,14 @@
         light3.setAttribute('class', 'item bg-danger rounded-circle');
 
         initFun();
-        
-      }, 13500);
 
+      }, 30000);
+          
     });
 
       
   </script>
-</body>
+
 
 <!-- <style>
     .box{

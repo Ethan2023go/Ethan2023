@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #movingObject {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      width: 50px;
+      height: 50px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  div id="movingObject"></div>
+</body>
+
+<script>
+  let movingObject = document.getElementById("yourObject"); // 替換成你的物件ID
+let currentLeft = parseInt(movingObject.style.left) || 0;
+let targetLeft = currentLeft + 100; // 停止的目標位置
+let increment = 5; // 每次移動的距離
+
+let intervalId = setInterval(() => {
+    currentLeft += increment;
+    movingObject.style.left = currentLeft + "px";
+
+    // 如果達到目標位置，清除間隔
+    if (currentLeft >= targetLeft) {
+        clearInterval(intervalId);
+    }
+}, 10); // 每10毫秒移動一次
+
+</script>
+</html>
