@@ -13,8 +13,8 @@
   <style>
     .box {
       display: flex;
-      width: 550px;
-      height: 200px;
+      width: 600px;
+      height: 300px;
       justify-content: space-around;
       align-items: center;
       border: 1px solid black;
@@ -23,13 +23,17 @@
     .item {
       width: 150px;
       height: 150px;
+    }
 
+    img{
+      width: 300px;
+      height: 500px;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+  <div class="container mt-5">
     <div class="row">
       <div class="col">
         <div class="box rounded-pill">
@@ -46,31 +50,71 @@
 
       </div>
     </div>
-    <div class="row">
+    <div class="row mt-5">
       <div class="col">
+        <img src="../img/country_walk.jpg" alt="紅綠燈" title="紅綠燈看路"  id="myImg">
       </div>
     </div>
   </div>
 
 
   <script>
+    // initFunction 老師建議養成好習慣，而且之後物件多可以省功
+    function initFun() {
+    myImg.setAttribute('class', 'd-none');
+    myBtn.setAttribute('class', 'btn btn-primary btn-lg mt-5 d-block');
+    }
+
+    // 宣告
     let light1 = document.getElementById('light1');
     let light2 = document.getElementById('light2');
     let light3 = document.getElementById('light3');
     let myBtn = document.getElementById('myBtn');
-
+    let myImg = document.getElementById('myImg');
+    
+    initFun();
+    // print 確認宣告
     console.log('light1', light1);
     console.log('light2', light2);
     console.log('light3', light3);
     console.log('myBtn', myBtn);
+    
+    
 
-    myBtn.addEventListener('click', function () {
+     myBtn.addEventListener('click', function () {
       // console.log('myBtn ok');
-      light1.setAttribute('class',"item bg-success rounded-circle");
-      light2.setAttribute('class',"item bg-success rounded-circle");
-      light3.setAttribute('class',"item bg-success rounded-circle");
+      
+      // light123 一起變綠
+      // light1.setAttribute('class',"item bg-success rounded-circle");
+      // light2.setAttribute('class',"item bg-success rounded-circle");
+      // light3.setAttribute('class',"item bg-success rounded-circle");
+    
+
+      // green start (分秒數)
+      setTimeout(function () {
+        light1.setAttribute('class',"item bg-success rounded-circle");
+      },2500);
+      setTimeout(function () {
+        light2.setAttribute('class',"item bg-success rounded-circle");
+      },3000);   
+      setTimeout(function () {
+        light3.setAttribute('class',"item bg-success rounded-circle");
+        myImg.setAttribute('class', 'd-block');
+      },3500);   
+
+      // red again
+      setTimeout(function () {
+        light1.setAttribute('class', 'item bg-danger rounded-circle');
+        light2.setAttribute('class', 'item bg-danger rounded-circle');
+        light3.setAttribute('class', 'item bg-danger rounded-circle');
+
+        initFun();
+        
+      }, 13500);
+
     });
 
+      
   </script>
 </body>
 
