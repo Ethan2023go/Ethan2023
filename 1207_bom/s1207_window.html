@@ -17,17 +17,20 @@
     <script>
         // 1.綁定
         let myBtn = document.getElementById('myBtn');
+            // myBtn變數 =  document(box) get這個函式包括('mybtn')
         let closeBtn = document.getElementById('closeBtn');
 
         let screenHeight = screen.height;
         let screenWidth = screen.width;
         console.log('screenWidth', screenWidth);
         console.log('screenHeight', screenHeight);
+        // console.log = print 東西出來
 
         let searchText = "apple";
 
         // 2.動作
         myBtn.addEventListener('click', function () {
+            // myBtn這個變數 套入一個function，當執行click的時候就...
             window.open('https://www.merriam-webster.com/dictionary/' + searchText);
             window.open('https://dictionary.cambridge.org/dictionary/english-chinese-traditional/' + searchText);
 
