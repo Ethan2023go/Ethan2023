@@ -12,20 +12,38 @@
 </head>
 <body>
     <button type="button" id="myBtn" onclick="oneFun();">one</button>
-
+    <button type="button" id="clearbutton" onclick="clearFun();">clearbutton</button>
 
     <script>
         // 單次
         function oneFun(){
             setTimeout(function(){
-                console.log('setTimeout');
+                // console.log('setTimeout');
             });
         }
 
         // 重複無限
-        setInterval(function(){
+        let XD = 
+        setInterval (function(){
             console.log('Hello setInterval');
-        },1000)
+        },3000);
+        let ID = setInterval(frame, 5000); 
+        
+
+        // clearInterval關閉重複
+        function frame(){
+            console.log('Hello frame');
+        }
+        
+        function clearFun(){
+            console.log('Hello ID');
+            clearInterval(XD);
+            clearInterval(ID);
+        }
+
+        // later
+        // clearInterval(refreshIntervalID);
+
     </script>
 </body>
 </html>
