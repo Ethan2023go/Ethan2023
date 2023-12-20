@@ -48,6 +48,7 @@
   <script>
     // 綁
     let name =document.getElementById('name');
+    // input name (id)
     let mysle=document.getElementById('mysle');
     let myBtn =document.getElementById('myBtn');
     let mySpan = document.getElementById('mySpan');
@@ -80,6 +81,7 @@ myBtn.addEventListener('click', function () {
 
 let mysleValue = mysle.value;
 let nameValue = name.value;
+// input name
 
 console.log('mySelValue', mysleValue);
 
@@ -89,6 +91,7 @@ feeling.name = nameValue;
  console.log('mysleValue.length', mysleValue.length);
  alert('請選擇 心情狀態')
  return false;
+//  return false 中斷程式 很好用
  }
 
 
