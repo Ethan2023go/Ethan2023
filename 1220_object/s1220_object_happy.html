@@ -85,6 +85,12 @@ console.log('mySelValue', mysleValue);
 
 feeling.name = nameValue;
 
+ if (mysleValue.length <= 0) {
+ console.log('mysleValue.length', mysleValue.length);
+ alert('請選擇 心情狀態')
+ return false;
+ }
+
 
 let getResult = "";
 switch (mysleValue) {
