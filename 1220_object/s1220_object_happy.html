@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h3>calculator object</h3>
+        <div class="row">
+          <div class="col-12 col-sm-6 mt-3">
+            <input class="form-control" type="text" name="" id="name" value="">
+          </div>
+          <div class=" mt-4">
+                <select class="col-12 col-sm-6" name="" id="mysle">
+                <option value="">心情</option>
+                <option value="happy">開心</option>
+                <option value="sad">難過</option>
+                <option value="soso">普通</option>
+                </select>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <div class="d-grid gap-2">
+              <button class="btn btn-primary" type="button" id="myBtn">submit</button>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+              <span id="mySpan">
+
+              </span>
+            </div>
+          </div>
+    </div>
+
+
+  <script>
+    // 綁
+    let name =document.getElementById('name');
+    let mysle=document.getElementById('mysle');
+    let myBtn =document.getElementById('myBtn');
+    let mySpan = document.getElementById('mySpan');
+   
+
+    // function
+    let feeling={
+    name:'name',
+    // feeling.name
+    happyFun:function(){
+    let result = `${this.name} 開勳`;
+    return result;
+    console.log('text',text);
+    },
+    sadFun: function() {
+    let result = `${this.name} 有點難過`;
+    return result;
+    console.log('text', text);
+    },
+    sosoFun: function () {
+    let result = `${this.name} 歐買尬得死`;
+    return result;
+    console.log('text', text);
+    },
+}
+
+
+// 動作
+myBtn.addEventListener('click', function () {
+
+let mysleValue = mysle.value;
+let nameValue = name.value;
+
+console.log('mySelValue', mysleValue);
+
+feeling.name = nameValue;
+
+
+let getResult = "";
+switch (mysleValue) {
+  case 'happy':
+    getResult = feeling.happyFun();
+    mySpan.setAttribute('class', 'text-success');
+    mySpan.innerText = getResult;
+    break;
+  case 'sad':
+    feeling.sadFun();
+    getResult = feeling.sadFun();
+    mySpan.setAttribute('class', 'text-danger');
+    mySpan.innerText = getResult;
+    break;
+  case 'soso':
+    feeling.sosoFun();
+    getResult = feeling.happyFun();
+    mySpan.setAttribute('class', 'text-primary');
+    mySpan.innerText = getResult;
+    break;
+
+  default:
+    break;
+}
+
+})
+
+  </script>
+</body>
+
+</html>
+
+
+
+
