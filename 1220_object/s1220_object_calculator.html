@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+
+<body>
+    <div class="container">
+        <h3>calculator object</h3>
+        <div class="row">
+          <div class="col-12 col-sm-6 mt-3">
+            <input class="form-control" type="text" name="" id="num1">
+          </div>
+          <div class="col-12 col-sm-6 mt-3">
+            <input class="form-control" type="text" name="" id="num2">
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <div class="d-grid gap-2">
+              <button class="btn btn-primary" type="button" id="myBtn">submit</button>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <span id="mySpan">
+              num1 + num2 =   <br>
+              num1 + num2 =   <br>
+              num1 + num2 =   <br>
+              num1 + num2 =   <br>
+            </span>
+          </div>
+        </div>
+    
+      </div>
+
+
+  <script>
+    // 計算function
+    let calObj={
+    sumFun1: function(){
+        let result= this.num1 + this.num2;
+        console.log(`num1 + num2 = ${result}`);
+        return result;
+                                // `${變數}` JS中字串宣告變數固定用法
+    },
+    sumFun2: function(){
+        let result= this.num1 - this.num2;
+        console.log(`num1 - num2 = ${result}`);
+        return result;
+    },
+    sumFun3: function(){
+        let result= this.num1 * this.num2;
+        console.log(`num1 * num2 = ${result}`);
+        return result;
+    },
+    sumFun4: function(){
+        let result= this.num1 / this.num2;
+        console.log(`num1 / num2 = ${result}`);
+        return result;
+    },
+
+    }    
+
+   
+   // 計算機
+   // 綁
+   let num1_input = document.getElementById('num1');
+   let num2_input = document.getElementById('num2');
+   let myBtn = document.getElementById('myBtn');
+   let mySpan = document.getElementById('mySpan');
+
+   //動作
+   myBtn.addEventListener('click',function(){
+    // console.log('myBtn ok');
+    // num1.value還是字串
+    //  let num1Value = num1.value;
+    //  console.log('num1Value', num1Value);
+    //  console.log('num1Value typeof', typeof (num1Value));
+
+    // 轉成數字並計算
+    // 注意! num1_input 與 num1 為不同變數 一個為function所用 一個為input進來的value所用
+    let num1Value = Number(num1_input.value);
+    let num2Value = Number(num2_input.value);
+    calObj.num1=num1Value;
+    calObj.num2=num2Value;
+    mySpan.innerHTML = 
+            ` num1 + num2=   ${calObj.sumFun1()} <br>
+              num1 - num2 =  ${calObj.sumFun2()} <br>
+              num1 * num2 =  ${calObj.sumFun3()} <br>
+              num1 / num2 =  ${calObj.sumFun4()} <br>
+              `;
+   })
+
+  </script>
+</body>
+
+</html>
