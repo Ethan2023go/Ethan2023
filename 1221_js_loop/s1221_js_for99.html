@@ -15,7 +15,7 @@
 <body>
 <div class="container">
   <div class="row">
-    <div class="col">
+    <div class="col mt-5 text-center">
       <div id="box">
         
       </div>
@@ -62,8 +62,6 @@
 
         
         // 補零
-        let box = document.getElementById('box');
-        
         // 演示padStart(補零)用法
         let tmp = 5;
         let changeTmp = tmp.toString().padStart(2, '0');
@@ -71,8 +69,9 @@
         console.log('tmp typeof', typeof (tmp));
         console.log('changeTmp', changeTmp);
         console.log('changeTmp typeof', typeof (changeTmp));
-
-
+  
+              
+        let box = document.getElementById('box');
         let resultText = "";
         for (let i = 1; i <= 9; i++) {
             // console.log('i', i);
