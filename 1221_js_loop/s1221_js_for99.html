@@ -42,16 +42,49 @@
 
            
         //  整理輸出字串
-        let box = document.getElementById('box');
-        let resultText = "";
+        // let box = document.getElementById('box');
+        // let resultText = "";
 
+        // for (let i = 1; i <= 9; i++) {
+        //     // console.log('i', i);
+        //     let text = "";
+        //     for (let j = 1; j <= 9; j++) {
+        //         // console.log('j', j);
+        //         // console.log(`${i} * ${j} = ${i * j}`);
+        //         text += `${i} * ${j} = ${i * j} `;
+        //     }
+        //     // 單行
+        //     resultText += `${text} <br>`;
+        // }
+        // console.log('resultText', resultText);
+
+        // box.innerHTML = resultText;
+
+        
+        // 補零
+        let box = document.getElementById('box');
+        
+        // 演示padStart(補零)用法
+        let tmp = 5;
+        let changeTmp = tmp.toString().padStart(2, '0');
+        console.log('tmp', tmp);
+        console.log('tmp typeof', typeof (tmp));
+        console.log('changeTmp', changeTmp);
+        console.log('changeTmp typeof', typeof (changeTmp));
+
+
+        let resultText = "";
         for (let i = 1; i <= 9; i++) {
             // console.log('i', i);
             let text = "";
             for (let j = 1; j <= 9; j++) {
                 // console.log('j', j);
                 // console.log(`${i} * ${j} = ${i * j}`);
-                text += `${i} * ${j} = ${i * j} `;
+                let tmpI = i.toString().padStart(2, '0');
+                let tmpJ = j.toString().padStart(2, '0');
+                let tmpResult = (i * j).toString().padStart(2, '0');
+                text += `${tmpI} * ${tmpJ} = ${tmpResult} | `;
+                // text += `${i} * ${j} = ${i * j} `;
             }
             // 單行
             resultText += `${text} <br>`;
@@ -59,6 +92,7 @@
         console.log('resultText', resultText);
 
         box.innerHTML = resultText;
+        // box.innerText = resultText;
     </script>
 
   </script>
