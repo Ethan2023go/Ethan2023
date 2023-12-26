@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+
+
+  <script>
+    // 薪水
+
+    let data = [3,5,5,6,3,5,10];
+    // newdata = [6,10,10,12......]
+    let newdata = [];
+    
+    // push用法
+    data.forEach(value =>{
+      console.log(value);
+    //   用foreach 將value值拉出
+      let tmpvalue = value * 2;
+    //   用tmp 包住新的value值
+      newdata.push(tmpvalue);
+    //   用 push 將值推入新的陣列newdata
+    })
+    console.log("newdata",newdata);
+
+
+
+ // 使用map方法
+let newData_m = [];
+newData_m = data.map(function (value) {
+    if(value > 5){
+        return value * 2;
+    }else{
+        return value * 10;
+        }
+});
+
+console.log("newData_m",newData_m);
+
+
+  </script>
+
+</body>
+
+</html>
