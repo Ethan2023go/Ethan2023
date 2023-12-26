@@ -33,9 +33,14 @@
     },1000);
     console.log('sum', sum);
 
+    // find 找第一個 (可加入條件)
+    let first= data.find(value=>{
+        return value > 5 ;
+    })
+    console.log('first',first);
 
     // foreach寫法
-    
+
     // foreach sum
     // let sum = 0;
     // data.forEach(value => {
