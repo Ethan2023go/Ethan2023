@@ -21,9 +21,9 @@
    
    let data = [3,5,5,6,3,5,10];
    // newData = [6,10,10.....]
+ 
    let newData=[];
-
-   //reduce 遞增 or 遞減 (+-陣列中的value)
+  //reduce 遞增 or 遞減 (+-陣列中的value)
    let sum = 0;
     // 1000 初始total
     sum = data.reduce(function (total, value, index) {
@@ -33,6 +33,7 @@
     },1000);
     console.log('sum', sum);
 
+   
     // find 找第一個 (可加入條件)
     let first= data.find(value=>{
         return value > 5 ;
@@ -50,7 +51,18 @@
     // console.log('sum', sum);
 
 
+    // indexof 找key(索引值)
+    const fruits = ["Apple","orange","banana","mango"];
+    let position = fruits.indexOf("mango");
+    console.log('position',position);
+
+    // 
    
+    // 重複去除
+    newData = data.filter(function (value, index, array) {
+    return array.indexOf(value) === index;
+    });
+    console.log('newData', newData);
    
 
 
