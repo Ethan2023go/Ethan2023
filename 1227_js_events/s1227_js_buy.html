@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+ <style>
+    img{
+        width: 200px;
+        height: 200px;
+    }
+    th{
+        text-align: center;
+    }
+    td{
+        text-align: center;      
+    }
+    input{
+        margin-top: 80px;
+    }
+    button{
+        margin-top: 80px;
+    }
+
+ </style>
+
+<body>
+    <table class="table mt-5">
+        <thead>
+          <tr>
+            <th scope="col">商品</th>
+            <th scope="col">價格</th>
+            <th scope="col">數量</th>
+            <th scope="col">總價</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><img src="../img/music-girl.jpg" alt="" srcset=""></th>
+            <td><input type="number" id="price_1" value=""></td>
+            <td><input type="number" id="num_1" value=""></td>
+            <td><input type="number" id="total_1" value=""></td>
+          </tr>
+          <tr>
+            <th scope="row"><img src="../img/mob.jpg" alt="" srcset=""></th>
+            <td><input type="number" id="price_2" value=""></td>
+            <td><input type="number" id="num_2" value=""></td>
+            <td><input type="number" id="total_2" value=""></td>
+          </tr>
+          <tr>
+            <th scope="row"><img src="../img/bad_place_girl.jpg" alt="" srcset=""></th>
+            <td><input type="number" id="price_3" value=""></td>
+            <td><input type="number" id="num_3" value=""></td>
+            <td><input type="number" id="total_3" value=""></td>
+          </tr>
+  
+          <tr>
+            <th scope="row"></th>
+            <td><button type="button" class="btn btn-success mt-2" id="myBtn">超過$500 享折扣8折</button></td>            
+            <td></td>
+           <td ><span id="total_all"></span></td>
+          </tr>
+  
+
+        </tbody>
+      </table>
+
+  <script>
+   function price_1fun(){
+    let result_total = Number(price_1.value) * Number(num_1.value);
+    // 記得下次計算式先包一個變數 再導入另外一個value
+    total_1.value = result_total;
+   }
+   function price_2fun(){
+    let result_total = Number(price_2.value) * Number(num_2.value);
+    // 記得下次計算式先包一個變數 再導入另外一個value
+    total_2.value = result_total;
+   }
+   function price_3fun(){
+    let result_total = Number(price_3.value) * Number(num_3.value);
+    // 記得下次計算式先包一個變數 再導入另外一個value
+    total_3.value = result_total;
+   }
+   let price_1 = document.getElementById('price_1');
+   let price_2 = document.getElementById('price_2');
+   let price_3 = document.getElementById('price_3');
+   let num_1 = document.getElementById('num_1');
+   let num_2 = document.getElementById('num_2');
+   let num_3 = document.getElementById('num_3');
+   let total_1 = document.getElementById('total_1');
+   let total_2 = document.getElementById('total_2');
+   let total_3 = document.getElementById('total_3');
+   let myBtn = document.getElementById('myBtn');
+   let total_all = document.getElementById('total_all');
+   
+    // num1
+    price_1.addEventListener('change',function(){
+       price_1fun();
+    })
+
+    num_1.addEventListener('change',function(){
+        price_1fun();
+    })
+    // num2
+    price_2.addEventListener('change',function(){
+       price_2fun();
+    })
+
+    num_2.addEventListener('change',function(){
+        price_2fun();
+    })
+    // num3
+    price_3.addEventListener('change',function(){
+       price_3fun();
+    })
+
+    num_3.addEventListener('change',function(){
+        price_3fun();
+    })
+
+       // myBtn
+      myBtn.addEventListener('click', function () {
+      let total_X = Number(total_1.value);
+      let total_2X = Number(total_2.value);
+      let total_3X = Number(total_3.value);
+      let sum = total_X + total_2X + total_3X;
+      if (sum > 500) {
+        sum = sum * 0.8;
+      }
+      console.log('sum', sum);
+      total_all.innerText = sum;
+
+    });
+
+
+
+  </script>
+</body>
+
+</html>
