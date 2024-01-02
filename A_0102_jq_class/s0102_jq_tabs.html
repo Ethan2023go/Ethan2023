@@ -14,11 +14,137 @@
 </head>
 
 <body>
-
-
+  <div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="d-grid mt-5 gap-2 ">
+             <button type="button" id="page1_b" class="btn btn-primary">page1</button>
+            </div> 
+        </div>
+        <div class="col">
+            <div class="d-grid mt-5 gap-2 ">
+             <button type="button" id="page2_b" class="btn btn-primary">page2</button>
+            </div> 
+        </div>
+        <div class="col">
+            <div class="d-grid mt-5 gap-2 ">
+             <button type="button" id="page3_b" class="btn btn-primary">page3</button>
+            </div> 
+        </div>
+        <div class="col">
+            <div class="d-grid mt-5 gap-2 ">
+             <button type="button" id="page4_b" class="btn btn-primary">page4</button>
+            </div> 
+        </div>
+    </div>
+  </div>
+   <div class="container mt-3 page-container" id="page1">
+    <div class="row">
+        <div class="col">
+           1111111111111
+          South Korea's main opposition party leader Lee Jae-myung was stabbed in the neck during a visit to the southern city of Busan on           Tuesday in an assault that left him bloodied but conscious, party officials said.
+          
+          Lee was touring the construction site of the Gadeokdo New Airport and talking to reporters when he was attacked, leaving the           politician with a 1-centimeter laceration on the left side of his neck, Democratic Party spokesperson Kwon Chil-seung said.
+          
+          Lee suffered “suspected damage to his jugular vein” and doctors were concerned he may have additional bleeding, Kwon said, citing           doctors.
+          
+          “He will quickly undergo a surgery” at the Seoul National University Hospital, after having been transferred there from Busan,           the spokesperson said, describing the attempt on Lee's life an act of “terrorism” and “a serious threat to democracy.”.
+          
+        </div>
+    </div>
+   </div>
+ 
+   <div class="container mt-3 page-container" id="page2">
+    <div class="row">
+        <div class="col">
+          22222222222222
+          South Korea's main opposition party leader Lee Jae-myung was stabbed in the neck during a visit to the southern city of Busan on           Tuesday in an assault that left him bloodied but conscious, party officials said.
+          
+          Lee was touring the construction site of the Gadeokdo New Airport and talking to reporters when he was attacked, leaving the           politician with a 1-centimeter laceration on the left side of his neck, Democratic Party spokesperson Kwon Chil-seung said.
+          
+          Lee suffered “suspected damage to his jugular vein” and doctors were concerned he may have additional bleeding, Kwon said, citing           doctors.
+          
+          “He will quickly undergo a surgery” at the Seoul National University Hospital, after having been transferred there from Busan,           the spokesperson said, describing the attempt on Lee's life an act of “terrorism” and “a serious threat to democracy.”.
+          
+        </div>
+    </div>
+   </div>
+ 
+   <div class="container mt-3 page-container" id="page3">
+    <div class="row">
+        <div class="col">
+          333333333333333
+          South Korea's main opposition party leader Lee Jae-myung was stabbed in the neck during a visit to the southern city of Busan on           Tuesday in an assault that left him bloodied but conscious, party officials said.
+          
+          Lee was touring the construction site of the Gadeokdo New Airport and talking to reporters when he was attacked, leaving the           politician with a 1-centimeter laceration on the left side of his neck, Democratic Party spokesperson Kwon Chil-seung said.
+          
+          Lee suffered “suspected damage to his jugular vein” and doctors were concerned he may have additional bleeding, Kwon said, citing           doctors.
+          
+          “He will quickly undergo a surgery” at the Seoul National University Hospital, after having been transferred there from Busan,           the spokesperson said, describing the attempt on Lee's life an act of “terrorism” and “a serious threat to democracy.”.
+          
+        </div>
+    </div>
+   </div>
+ 
+   <div class="container mt-3 page-container" id="page4">
+    <div class="row">
+        <div class="col">
+           4444444444444444444
+          South Korea's main opposition party leader Lee Jae-myung was stabbed in the neck during a visit to the southern city of Busan on           Tuesday in an assault that left him bloodied but conscious, party officials said.
+          
+          Lee was touring the construction site of the Gadeokdo New Airport and talking to reporters when he was attacked, leaving the           politician with a 1-centimeter laceration on the left side of his neck, Democratic Party spokesperson Kwon Chil-seung said.
+          
+          Lee suffered “suspected damage to his jugular vein” and doctors were concerned he may have additional bleeding, Kwon said, citing           doctors.
+          
+          “He will quickly undergo a surgery” at the Seoul National University Hospital, after having been transferred there from Busan,           the spokesperson said, describing the attempt on Lee's life an act of “terrorism” and “a serious threat to democracy.”.
+          
+        </div>
+    </div>
+   </div>
+ 
 
   <script>
+   $(document).ready(function (){
+    const page1_b = $('#page1_b');
+    const page2_b = $('#page2_b');
+    const page3_b = $('#page3_b');
+    const page4_b = $('#page4_b');
 
+    const page1 = $('#page1');
+    const page2 = $('#page2');
+    const page3 = $('#page3');
+    const page4 = $('#page4');
+
+    const pagecontainer = $('.page-container');
+
+     console.log('page1', page1);
+     console.log('page2', page2);
+     console.log('page3', page3);
+     console.log('page4', page4);
+     console.log('pageContainer', pagecontainer);
+
+     pagecontainer.hide();
+    //  初始化 讓全部文章消失
+     page1.show();
+     
+     page1_b.click(function() {
+        pagecontainer.hide();
+        page1.show();
+     });
+     page2_b.click(function() {
+        pagecontainer.hide();
+        page2.show();
+     });
+     page3_b.click(function() {
+        pagecontainer.hide();
+        page3.show();
+     });
+     page4_b.click(function() {
+        pagecontainer.hide();
+        page4.show();
+     });
+
+   })
 
   </script>
 </body>
