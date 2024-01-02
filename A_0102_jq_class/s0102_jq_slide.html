@@ -123,12 +123,12 @@
         //   $(getDataPage).fadeIn(3000);
         // });
         
-        pageContainer.hide();
+        pageContainer.slideUp(2000);
 
-        setTimeout(function () {
-          $(getDataPage).fadeIn(3000);
-        //   $(getDataPage).fadeout(4000);
-      });
+         setTimeout(function () {
+          $(getDataPage).slideDown(3000);
+         }, 2000)
+      
     });
   });
   </script>
