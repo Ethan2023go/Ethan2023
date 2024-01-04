@@ -17,16 +17,16 @@
 <table>
     <tr>
         <td>
-            <input type="number" id="num1" class="form-control">
+            <input type="number" id="" class="mynum1 form-control">
         </td>
 
         <td>
-            <input type="number" id="num2" class="form-control">
+            <input type="number" id="" class="mynum2 form-control">
         </td>
 
         <td>
             <!-- 有遇到select option 系列 建議先用input寫一次再改用select  -->
-           <select name="" id="math" class="form-select">   
+           <select name="" id="" class="myopt form-select">   
             <option value="0" class="+">----請選擇----</option>
             <option value="1" class="+">+</option>
             <option value="2" class="-">-</option>
@@ -37,10 +37,10 @@
         
     
      <td>
-        <button type="button" id="mybtn" class="btn btn-info">click me</button>
+        <button type="button" id="" class="mybtn btn btn-info">click me</button>
      </td>
      <td>
-         <input type="text" value="" id="myresult" class="form-control" placeholder = "result" readonly>
+         <input type="text" value="" id="" class="myresult form-control" placeholder = "result" readonly>
      </td>
 
     </tr>
@@ -59,50 +59,62 @@
     // $(document).ready(function () 可以簡寫
      
     $(function(){
-        const Num1 = $('#num1');
-        const Num2 = $('#num2');
-        const Math = $('#math');
-        const Mybtn = $('#mybtn');
-        const Result = $('#myresult');
+        const Num1 = $('.num1');
+        const Num2 = $('.num2');
+        const Math = $('.math');
+        const Mybtn = $('.mybtn');
+        const Result = $('.myresult');
         console.log(Num1); 
         console.log(Num2); 
         console.log(Math); 
         console.log(Result); 
         
         Mybtn.click(function(){
-         let getNum1value = Number(Num1.val());
-         let getNum2value = Number(Num2.val());
-         let getMathvalue = Number(Math.val());
-         let result = 0;
-        //  console.log(getNum1value);
-        //  console.log(getNum2value);
+        // console.log('this', this);
+        // console.log('$(this)', $(this));
+        // console.log('$(this).parent()', $(this).parent());
+        // console.log('$(this).parent().parent()', $(this).parent().parent());
+        // console.log('$(this).parent().parent().parent()', $(this).parent().parent().parent());
 
+        const nowRow = $(this).parent().parent().parent();
+        const nowNum1 = nowRow.find('.mynum1');
+        const nowNum2 = nowRow.find('.mynum2');
+        const nowOpt = nowRow.find('.myopt');
+        const nowResult = nowRow.find('.myresult');
+        console.log('nowNum1', nowNum1);
+
+        let getNum1Value = Number(nowNum1.val());
+        let getNum2Value = Number(nowNum2.val());
+        let getOptValue = Number(nowOpt.val());
+        console.log('getNum1Value', getNum1Value);
+        console.log('getNum1Value typeof', typeof (getNum1Value));
+         
          // string method length 
-        if (Num1.val().length <= 0 || Num2.val().length <= 0) {
+        if (nowNum1.val().length <= 0 || nowNum2.val().length <= 0) {
           alert('empty?');
           return false;
         }
        
    
        // 根據選擇的運算符號進行計算
-       switch(getMathvalue) {
+       switch(getOptValue) {
        case 1: 
-          result = getNum1value + getNum2value;
+          result = getNum1Value + getNum2Value;
          break;
        case 2:
-           result = getNum1value - getNum2value;
+           result = getNum1Value - getNum2Value;
          break;
        case 3:
-          result = getNum1value * getNum2value;
+          result = getNum1Value * getNum2Value;
          break;
        case 4:
-          result = getNum1value / getNum2value;
+          result = getNum1Value / getNum2Value;
          break;
     }
-       console.log(result);
+      //  console.log(result);
        // 將結果輸出 
-        Result.val(result);
-         console.log(Result.val(result));
+        nowResult.val(result);
+        console.log(Result.val(result));
        });
 
     });
