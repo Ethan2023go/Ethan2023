@@ -48,8 +48,8 @@
 
 <body>
     <div class="container">
-        <h3 class="text-center"><span>User</span> Create</h3>
-        <form action="../../api/user/store.php">
+        <h3 class="text-center"><span>Plan</span> Edit</h3>
+        <form action="">
             <table>
                 <tr>
                     <th width="50%">欄位名稱</th>
@@ -58,24 +58,34 @@
 
                 <tr>
                     <td>
-                        name
+                        id
                     </td>
                     <td>
-                        <input type="text" name="acc" id="">
+                        1
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        password
+                        title
                     </td>
                     <td>
-                        <input type="password" name="pwd" id="">
+                        <input type="text" name="title" id="">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        content
+                    </td>
+                    <td>
+                        <input type="password" name="content" id="">
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="submit" value="User Create">
+                        <input type="hidden" name="user_id" value="1">
+                        <input type="submit" value="Plan Edit">
                     </td>
                 </tr>
 
