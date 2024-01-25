@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Find用法 (往內找第一個)</title>
+  <title>closest 往外找第一個</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -72,13 +72,16 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script>
+
+    // find 往內找第一個
+    // closest 往外找第一個
     $(document).ready(function () {
-      const box = $('.box');
-      box.click(function (e) {
+      const mySpan = $('.mySpan');
+      mySpan.click(function (e) {
         console.log('this', this);
-        let thisFind = $(this).find('.mySpan');
-        console.log('thisFind', thisFind);
-        thisFind.attr('class', 'mySpan border border-danger p-3 text-danger')
+        let thisClosest = $(this).closest('ul');
+        console.log('thisClosest', thisClosest);
+        thisClosest.attr('class', 'mySpan border border-danger p-3 text-danger')
       });
 
 
