@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <div class="container">
+  <!-- <div class="container">
     <div class="row">
       <div class="col">
         <div class="box">
@@ -26,8 +26,25 @@
           </ul>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
+
+
+     <div class="container">
+     <div class="row">
+       <div class="col">
+         <div class="box">
+           <ul id="myUl">
+             <li class="myLi">11</li>
+             <li class="myLi">22</li>
+             <li class="myLi">33</li>
+             <li class="myLi">44</li>
+             <li class="myLi">55</li>
+           </ul>
+         </div>
+       </div>
+     </div>
+   </div>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
@@ -35,17 +52,36 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script>
+    //  綁ID用法
+    // $(document).ready(function () {
+    //   const li33 = $('#li33');
+    //   li33.click(function (e) {
+    //     let otherLi = li33.siblings();
+    //     console.log('otherLi', otherLi);
+    //     li33.attr('class', 'text-danger');
+    //     otherLi.attr('class', 'text-primary');
+
+    //   });
+
+    // });
+
+
+
+    // 綁class用法
     $(document).ready(function () {
-      const li33 = $('#li33');
-      li33.click(function (e) {
-        let otherLi = li33.siblings();
-        console.log('otherLi', otherLi);
-        li33.attr('class', 'text-danger');
+      const myLi = $('.myLi');
+      myLi.click(function (e) {
+        console.log('this', this);
+
+        let otherLi = $(this).siblings();
+        // console.log('otherLi', otherLi);
+        $(this).attr('class', 'text-danger');
         otherLi.attr('class', 'text-primary');
 
       });
 
     });
+
 
   </script>
 </body>
