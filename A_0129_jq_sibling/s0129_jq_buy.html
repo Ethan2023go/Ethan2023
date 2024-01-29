@@ -12,6 +12,12 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
  <style>
+    .bg{
+      height: 100vh;
+      width: 100%;
+      background-image: url(../img/sushi.jpg);
+      background-size: contain;
+    }
     img{
         width: 200px;
         height: 200px;
@@ -50,72 +56,167 @@
  </style>
 
 <body>
+  <div class="bg">
      <div class="container d-flex justify-content-center align-content-center">
         <div class="row">
             <div class="col">
-                <img class="imgs" src="../img/food_1.jpg" alt="" srcset="">
-                <button class="btn btn-info" type="button">鮮蝦壽司</button>
+                <img class="imgs" src="../img/food_1.png" alt="" srcset="">
+                <button  class="myBtn btn btn-info" data-name="鮮蝦壽司" type="button" data-price="300" data-img="../img/food_1.png" >鮮蝦壽司</button>
             </div>
             <div class="col">
                 <img class="imgs" src="../img/food_2.png" alt="" srcset="">
-                <button class="btn btn-info" type="button">花生豆腐</button>
+                <button  class="myBtn btn btn-info" data-name="花生豆腐" type="button" data-price="30" data-img="../img/food_2.png" >花生豆腐</button>
             </div>
             <div class="col">
                 <img class="imgs" src="../img/food_3.png" alt="" srcset="">
-                <button class="btn btn-info" type="button">星鰻</button>
+                <button  class="myBtn btn btn-info" data-name="星鰻" type="button" data-price="160" data-img="../img/food_3.png" >星鰻</button>
             </div>
             <div class="col">
                 <img class="imgs" src="../img/food_4.png" alt="" srcset="">
-                <button class="btn btn-info" type="button">壽司套餐</button>
+                <button  class="myBtn btn btn-info" data-name="壽司套餐" type="button" data-price="300" data-img="../img/food_4.png" >壽司套餐</button>
             </div>
         </div>
      </div>
   
 
 
-    <table class="table mt-5">
+    <table class="table m-auto mt-5 table-hover text-center w-75">
         <thead>
           <tr>
-            <th scope="col">商品</th>
-            <th scope="col">價格</th>
-            <th scope="col">數量</th>
-            <th scope="col">總價</th>
-            <th scope="col">刪除</th>
+            <th width="25%" scope="col">商品</th>
+            <th width="15%" scope="col">價格</th>
+            <th width="15%" scope="col">數量</th>
+            <th width="15%" scope="col">總價</th>
+            <th width="15%" scope="col">刪除</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <!-- <tr>
             <th scope="row">
                 <img src="../img/food_1.jpg" alt="" srcset="">
             </th>
-            <td><input class="form-control" type="number" id="price_1" value=""></td>
-            <td><input class="form-control" type="number" id="num_1" value=""></td>
+            <td><input class="form-control" type="number" id="price_1" value="300"></td>
+            <td><input class="form-control" type="number" id="num_1" value="" max="10" min="1"></td>
             <td><input class="form-control" type="number" id="total_1" value=""></td>
             <td>
                 <button type="button" class="delBtn btn btn-danger">
                     <i class="fa-solid fa-trash"></i>
                 </button>
               </td>
-          </tr>
+          </tr> -->
 
   
-          <tr>
+          <!-- <tr>
             <th scope="row"></th>
             <td><button type="button" class="btn btn-success mt-2" id="myBtn">超過$500 享折扣8折</button></td>            
             <td></td>
            <td ><span id="total_all"></span></td>
-          </tr>
+          </tr> -->
   
 
         </tbody>
       </table>
+    
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script>
-  
+    $(document).ready(function () {
+      function delFun(nowThis) {
+        console.log('del ok');
+        // 抓tr數量
+        // 如果tr <=2 不能刪除
+
+        // 抓tr數量
+        let getTrCount = $('tr').length;
+        console.log('getTrCount', getTrCount);
+        // 如果tr <= 2 不能刪除
+        if (getTrCount > 2) {
+          let nowTr = $(nowThis).parent().parent();
+          nowTr.remove();
+        }
 
 
+      }
+
+      function cloneFun(nowThis) {
+        console.log('clone ok');
+        let nowTr = $(nowThis).parent().parent();
+        // nowTr.clone(true).appendTo("tbody");
+        nowTr.clone(true).insertAfter(nowTr);
+      }
+
+      const myBtn = $('.myBtn');
+      let delBtn = $('.delBtn');
+      let cloneBtn = $('.cloneBtn');
+
+      // init cloneBtn
+      cloneBtn.click(function (e) {
+        cloneFun(this);
+      });
+
+      // init delBtn
+      delBtn.click(function (e) {
+        delFun(this);
+      });
+
+      // count.change(function () {
+      //   let total= $(this).parent().val();
+      //   console.log(count);
+      // })
+
+      myBtn.click(function (e) {
+        let name = $(this).attr('data-name');
+        let price = $(this).attr('data-price');
+        let imgUrl = $(this).attr('data-img');
+
+        let content = `
+        <tr>
+          <td class="">
+            <img src="${imgUrl}" alt="">
+            <br>
+            ${name}
+          </td>         
+          <td class="align-middle">NT$${price}</td>
+           <td>
+            <input type="number" class="form-control" name="" id="" value="1" max="10" min="1">
+          </td>
+          <td class="align-middle">NT$${price}</td>
+          <td>
+            <input type="text" class="form-control" name="" id="" max="10" min="1">
+          </td>
+          <td>
+            <button type="button" class="cloneBtn btn btn-warning"><i class="fa-regular fa-copy"></i></button>
+            <button type="button" class="delBtn btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+          </td>
+        </tr>
+        `;
+        
+
+
+        $('tbody').append(content);
+
+        addDelBtn = $('.delBtn').last();
+        addCloneBtn = $('.cloneBtn').last();
+
+        // addDelBtn
+        addDelBtn.click(function (e) {
+          delFun(this);
+        });
+
+        // addCloneBtn
+        addCloneBtn.click(function (e) {
+          cloneFun(this);
+        });
+
+      });
+    });
 
   </script>
+  </div>
 </body>
 
 </html>
