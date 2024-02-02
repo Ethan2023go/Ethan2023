@@ -13,35 +13,39 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="row mt-3">
-      <div class="col">
-        <button type="button" class="testBtn btn btn-primary">testBtn</button>
+  <div class="container" id="myContainer">
+    <div class="row">
+      <div class="col-2">
+        id
+      </div>
+      <div class="col-2">
+        name
+      </div>
+      <div class="col-2">
+        price
+      </div>
+      <div class="col-6">
+        location
       </div>
     </div>
-    <div class="row mt-3">
-      <div class="col">
-        <button type="button" class="testBtn btn btn-primary">testBtn</button>
+    <!-- <div class="row">
+      <div class="col-2">
+        1
       </div>
-    </div>
-    <div class="row mt-3">
-      <div class="col">
-        <button type="button" class="testBtn btn btn-primary">testBtn</button>
+      <div class="col-2">
+        amy
       </div>
-    </div>
-    <div class="row mt-3">
-      <div class="col">
-        <button type="button" class="testBtn btn btn-primary">testBtn</button>
+      <div class="col-2">
+        10000
       </div>
-    </div>
-    <div class="row mt-3">
-      <div class="col">
-        <button type="button" class="testBtn btn btn-primary">testBtn</button>
+      <div class="col-6">
+        台北 台中 高雄
       </div>
-    </div>
+    </div> -->
   </div>
 
-  <form action="./s0202_jq_json.html"></form>
+
+  <!-- <form action="./data/factory.json"></form> -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -49,25 +53,29 @@
 
   <script>
     $(document).ready(function () {
+      const myContainer = $('#myContainer')
 
-      let url = '';
+      let url = './data/factory.json';
 
+      // 04 ajax get php 03
       $.ajax({
         type: "get",
-        url: "./s0202_jq_json.html",
-        // data: "data",
-        // dataType: "json",
-
-        // 當成功傳值後，執行後面的function
+        url: url,
+        data: "data",
+        dataType: "json",
         success: function (res) {
           console.log('res', res);
+          console.log('res[12]', res[12]);
+          console.log('res[12].id', res[12].id);
+          console.log('res[12].name', res[12].name);
+          console.log('res[12].location', res[12].location);
+          console.log('res[12].web', res[12].web);
         }
       });
 
-
     });
 
-   
+
 
   </script>
 </body>
