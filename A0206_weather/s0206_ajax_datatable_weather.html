@@ -21,6 +21,7 @@
       <tr>
         <th width="30%" class="text-center">id</th>
         <th class="text-start">name</th>
+        <th class="text-start">desc</th>
       </tr>
     </thead>
     <tbody>
@@ -58,8 +59,11 @@
           // console.log('res.records', res.records);
           // console.log('res["records"]', res['records']);
           // console.log('res.records.datasetDescription', res.records.datasetDescription);
-          // console.log('nowLocation', nowLocation);
           let nowLocation = res.records.location;
+          // let nowLocationMaxT = res.records.location[1].weatherElement[4]['time'][0]['parameter']['parameterName'];
+          // let nowLocationMinT = res.records.location[1].weatherElement[2]['time'][0]['parameter']['parameterName'];
+          // console.log('nowLocationMaxT', nowLocationMaxT);
+          // console.log('nowLocation', nowLocation);
           $.each(nowLocation, function (key, value) {
             // console.log('key', key);
             // console.log('value', value);
@@ -67,6 +71,13 @@
             let nowID = key + 1;
             let stringID = nowID.toString().padStart(2, "0");
             let nowLocationName = value.locationName;
+            console.log('value', value);
+            let nowLocationMaxT = value.weatherElement[4]['time'][0]['parameter']['parameterName'];
+            let nowLocationMinT = value.weatherElement[2]['time'][0]['parameter']['parameterName'];
+            let nowLocationWxName = value.weatherElement[0]['time'][0]['parameter']['parameterName'];
+            let nowLocationWxValue = value.weatherElement[0]['time'][0]['parameter']['parameterValue'].toString();
+            let imgUrl = nowLocationWxValue + '.svg';
+
             // let content = `
             //  <li>${nowLocationName}</li>
             // `;
@@ -74,10 +85,12 @@
               <tr>
                 <td class="text-center">${stringID}</td>
                 <td class="text-start">${nowLocationName}</td>
+                <td class="text-start">${nowLocationMinT} - ${nowLocationMaxT} °C ${nowLocationWxName} <img src="../img_weather/day/${imgUrl}" alt=""></td>
               </tr>
             `;
 
-            console.log('nowLocationName', nowLocationName);
+
+            // console.log('nowLocationName', nowLocationName);
             $('tbody').append(content);
           });
 

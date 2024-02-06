@@ -22,6 +22,7 @@
         <th width="30%" class="text-center">id</th>
         <th class="text-start">name</th>
         <th class="text-start">stationID</th>
+        <th class="text-start">StationAltitudea</th>
       </tr>
     </thead>
     <tbody>
@@ -68,11 +69,15 @@
             let stringID = nowID.toString().padStart(2, "0");
             let nowStationName = value.StationName;
             let Stationid= value.StationId;
+            let StationAltitudea = value.GeoInfo.StationAltitude;
+            // let coord= value.GeoInfo.Coordinates[0].StationLongitude;
+           
             let content = `
               <tr>
                 <td class="text-center">${stringID}</td>
                 <td class="text-start">${nowStationName}</td>
                 <td class="text-start">${Stationid}</td>
+                <td class="text-start">${StationAltitudea}</td>
               </tr>
             `;
 
@@ -82,7 +87,7 @@
 
           // run datatable
           myTable.DataTable();
-
+          
         }
       });
     });
