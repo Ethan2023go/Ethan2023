@@ -24,6 +24,7 @@
       </tr>
     </thead>
     <tbody>
+
     </tbody>
   </table>
 
@@ -33,7 +34,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- pw url -->
-  <script src="../ignore/js/pw.js"></script>
+  <script src="../ignore/weather_pra.js"></script>
 
   <!-- datatable js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
@@ -52,32 +53,30 @@
         // data: "data",
         // dataType: "dataType",
         success: function (res) {
-          // . [] ->  property variable
-          // .xxx()  ['xxx']()  ->xxx() method function action
-          // console.log('res', res);
-          // console.log('res.records', res.records);
-          // console.log('res["records"]', res['records']);
-          // console.log('res.records.datasetDescription', res.records.datasetDescription);
-          // console.log('nowLocation', nowLocation);
-          let nowLocation = res.records.location;
-          $.each(nowLocation, function (key, value) {
-            // console.log('key', key);
-            // console.log('value', value);
-            // console.log('value.locationName', value.locationName);
+        //   console.log('res', res);
+        //   console.log('res.records', res.records);
+        //   console.log('res["records"]', res['records']);
+        //   console.log('res.records.datasetDescription', res.records.datasetDescription);
+        //   console.log('nowLocation', nowLocation);
+          let nowStation = res.records.Station;
+          $.each(nowStation, function (key, value) {
+            console.log('key', key);
+            console.log('value', value);
+            console.log('value.StationName', value.StationName);
             let nowID = key + 1;
             let stringID = nowID.toString().padStart(2, "0");
-            let nowLocationName = value.locationName;
+            let nowStationName = value.StationName;
             // let content = `
             //  <li>${nowLocationName}</li>
             // `;
             let content = `
               <tr>
                 <td class="text-center">${stringID}</td>
-                <td class="text-start">${nowLocationName}</td>
+                <td class="text-start">${nowStationName}</td>
               </tr>
             `;
 
-            console.log('nowLocationName', nowLocationName);
+            console.log('nowLocationName', nowStationName);
             $('tbody').append(content);
           });
 
