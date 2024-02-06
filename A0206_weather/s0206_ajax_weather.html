@@ -1,49 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
 
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <style>
+  <body>
+    <ol id="myOl">
+      <!-- <li>111</li> -->
+    </ol>
 
-  </style>
-</head>
+    <table class="table table-hover" id="myTable">
+      <thead>
+        <tr>
+          <th width="30%" class="text-center">id</th>
+          <th class="text-start">name</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
 
-<body>
-
-
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <script src="../ignore/weather.js"></script>
 
-  <script>
-   $(document).ready(function () {
-    // let url = 'https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWA-C05EFCFC-0EBE-4765-BC6B-5CBFE693F3A5 '
-    let url = weatherUrl;
+    <script>
+      $(document).ready(function () {
+        let url = weatherUrl;
+        const myOL=$('#myOl');
+        const myTable = $('#myTable');
 
-    $.ajax({
-        type: "get",
-        url: url,
-        // data: "data",
-        // dataType: "dataType",
-        success: function (res) {
-            console.log('res',res);
-        }
-    });
-    
-   })
+        $.ajax({
+          type: "get",
+          url: url,
+          // data: "data",
+          // dataType: "dataType",
+          success: function (res) {
+          // . [] ->  property variable  變數
+          // .xxx() ['xxx']()  ->xxx() method function action 函數
+            
+          // console.log("res", res);
+          // console.log('res.records', res.records);
+          // console.log('res["records"]', res['records']);
+          // console.log('res.records.datasetDescription', res.records.datasetDescription);
+          // console.log('nowLocation', nowLocation);
 
-  </script>
-</body>
+          let nowLocation = res.records.location;
+          $.each(nowLocation, function (key,value) {
+            // console.log('key', key);
+            // console.log('value', value);
+            // console.log('value.locationName', value.locationName);
+            let nowID = key + 1;
+            //padStart設定總字串總個數 (包含原始數字)
+            let stringID = nowID.toString().padStart(2,"0");
+            let nowLocationName = value.locationName;
+            // let content = `
+            //  <li>${nowLocationName}</li>
+            // `;
+            let content = `
+              <tr>
+                <td class="text-center">${stringID}</td>
+                <td class="text-start">${nowLocationName}</td>
+              </tr>
+            `;
 
+            console.log('nowLocationName', nowLocationName);
+            $('tbody').append(content);
+          });
+          },
+        });
+      });
+    </script>
+  </body>
 </html>
