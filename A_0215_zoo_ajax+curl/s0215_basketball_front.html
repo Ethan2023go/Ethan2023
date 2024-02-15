@@ -84,7 +84,7 @@
               統計分數
             </h4>
             <h3 class="text-success mt-3">
-              單場歷史最高分數
+              單場歷史最高分數<span id="highSpan"></span> 
             </h3>
             <h5 class="text-primary mt-3">
               <span id="timeSpan">
@@ -137,28 +137,43 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script>
-     $(document).ready(function () {
+         $(document).ready(function () {
       const scoreSpan = $('#scoreSpan');
       const timeSpan = $('#timeSpan');
+      const highSpan = $('#highSpan');
       const startBtn = $('#startBtn');
       const shootBtn = $('#shootBtn');
       const resetBtn = $('#resetBtn');
       const closeBtn = $('#closeBtn');
+      const point3 = $('#point3');
+
       let score = 0;
       let nowTime = 10;
+      let highScore = localStorage.getItem("highScore");
+
+      highSpan.text(highScore);
+
       shootBtn.hide();
       closeBtn.hide();
+      point3.hide();
 
       startBtn.click(function (e) {
         scoreSpan.text(score);
         startBtn.hide();
         shootBtn.show();
+        resetBtn.hide();
 
         const myInterval = setInterval(() => {
-          if(nowTime <= 0){
+          if (nowTime <= 0) {
             clearInterval(myInterval);
             shootBtn.hide();
             closeBtn.show();
+            resetBtn.show();
+            let getScore = score;
+            if (highScore < getScore) {
+              localStorage.setItem("highScore", getScore);
+            }
+
             timeSpan.text('倒數計時');
           }
           timeSpan.text(nowTime);
@@ -167,10 +182,11 @@
       });
 
       shootBtn.click(function (e) {
-        if (nowTime > 5){
-        score += 2;
-        }else{
+        if (nowTime > 5) {
+          score += 2;
+        } else {
           score += 3;
+          point3.show();
         }
         scoreSpan.text(score);
       });
@@ -180,7 +196,9 @@
         nowTime = 10;
         scoreSpan.text(score);
         startBtn.show();
+        shootBtn.hide();
         closeBtn.hide();
+        point3.hide();
       });
 
     });
