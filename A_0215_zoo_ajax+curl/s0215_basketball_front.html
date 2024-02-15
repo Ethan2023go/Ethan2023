@@ -87,7 +87,9 @@
               單場歷史最高分數
             </h3>
             <h5 class="text-primary mt-3">
-             倒數計時
+              <span id="timeSpan">
+                倒數計時
+              </span>
             </h5>
             <hr>
             <h5 class="text-danger mt-2">
@@ -105,6 +107,7 @@
             <div class="d-grid gap-2 mt-4">
               <button class="btn btn-primary" type="button" id="startBtn">開始</button>
               <button class="btn btn-primary" type="button" id="shootBtn">投籃</button>
+              <button class="btn btn-danger" type="button" id="closeBtn">遊戲結束</button>
             </div>
           </div>
           <div class="col-6">
@@ -134,29 +137,47 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script>
-    $(document).ready(function () {
+     $(document).ready(function () {
       const scoreSpan = $('#scoreSpan');
+      const timeSpan = $('#timeSpan');
       const startBtn = $('#startBtn');
       const shootBtn = $('#shootBtn');
       const resetBtn = $('#resetBtn');
+      const closeBtn = $('#closeBtn');
       let score = 0;
+      let nowTime = 5;
       shootBtn.hide();
+      closeBtn.hide();
 
       startBtn.click(function (e) {
         scoreSpan.text(score);
         startBtn.hide();
         shootBtn.show();
+
+        const myInterval = setInterval(() => {
+          if(nowTime <= 0){
+            clearInterval(myInterval);
+            shootBtn.hide();
+            closeBtn.show();
+            timeSpan.text('倒數計時');
+          }
+          timeSpan.text(nowTime);
+          nowTime -= 1;
+        }, 1000);
       });
 
-      shootBtn.click(function (e) { 
+      shootBtn.click(function (e) {
         // score += 2;
         score += 3;
         scoreSpan.text(score);
       });
 
-      resetBtn.click(function (e) { 
+      resetBtn.click(function (e) {
         score = 0;
+        nowTime = 5;
         scoreSpan.text(score);
+        startBtn.show();
+        closeBtn.hide();
       });
 
     });
