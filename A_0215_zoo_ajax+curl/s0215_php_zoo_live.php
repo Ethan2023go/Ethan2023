@@ -1,6 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 // 使livesever可以直接使用
+// 原理:利用php從網路上拉資料 (console看的到) -> header(*) 開放權限 -> 再將資料丟入前端
 
 //init curl
 $ch = curl_init();
