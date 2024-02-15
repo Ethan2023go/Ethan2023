@@ -1,5 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
+// 使livesever可以直接使用
+
 //init curl
 $ch = curl_init();
 //curl_setopt可以設定curl參數
