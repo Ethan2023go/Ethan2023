@@ -145,7 +145,7 @@
       const resetBtn = $('#resetBtn');
       const closeBtn = $('#closeBtn');
       let score = 0;
-      let nowTime = 5;
+      let nowTime = 10;
       shootBtn.hide();
       closeBtn.hide();
 
@@ -167,14 +167,17 @@
       });
 
       shootBtn.click(function (e) {
-        // score += 2;
-        score += 3;
+        if (nowTime > 5){
+        score += 2;
+        }else{
+          score += 3;
+        }
         scoreSpan.text(score);
       });
 
       resetBtn.click(function (e) {
         score = 0;
-        nowTime = 5;
+        nowTime = 10;
         scoreSpan.text(score);
         startBtn.show();
         closeBtn.hide();
